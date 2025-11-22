@@ -9,12 +9,22 @@ import os
 from backend.api.physicians import router as physicians_router
 from backend.api.messages import router as messages_router
 from backend.api.classify import router as classify_router
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 app = FastAPI()
 app.include_router(physicians_router)
 app.include_router(messages_router)
 app.include_router(classify_router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Create tables on startup
 Base.metadata.create_all(bind=engine)
@@ -66,7 +76,6 @@ def load_data():
         db.commit()
 
     db.close()
-
 
 @app.get("/")
 def root():
