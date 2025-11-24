@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from backend.database import SessionLocal
 from backend.models.physician import Physician
+from sqlalchemy import func
 
 router = APIRouter()
 
@@ -18,10 +19,11 @@ def list_physicians(state: str = None, specialty: str = None, db: Session = Depe
     query = db.query(Physician)
 
     if state:
-        query = query.filter(Physician.state == state)
+        query = query.filter(func.lower(Physician.state) == state.lower())
+
 
     if specialty:
-        query = query.filter(Physician.specialty == specialty)
+        query = query.filter(func.lower(Physician.specialty) == specialty.lower())
 
     physicians = query.all()
     return [p.to_api() for p in physicians]

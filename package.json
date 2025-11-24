@@ -1,0 +1,8 @@
+{
+  "name": "healthcare-engagement-dashboard",
+  "private": true,
+  "scripts": {
+    "frontend": "cd frontend && npm install && npm start",
+    "frontend:build": "cd frontend && npm run build"
+  }
+}

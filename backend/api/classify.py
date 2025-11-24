@@ -27,7 +27,6 @@ def get_db():
 
 @router.post("/classify/{message_id}")
 def classify_message(message_id: int, db: Session = Depends(get_db)):
-    # Fetch the message from DB
     msg = db.query(Message).filter(Message.message_id == message_id).first()
     if not msg:
         return {"error": f"Message {message_id} not found"}
@@ -39,7 +38,6 @@ def classify_message(message_id: int, db: Session = Depends(get_db)):
     for rule in COMPLIANCE_RULES["rules"]:
         rule_keywords = rule.get("keywords_any", [])
 
-        # Find which keywords matched
         matched = [kw for kw in rule_keywords if kw.lower() in text]
 
         if matched:

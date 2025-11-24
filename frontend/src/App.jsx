@@ -90,12 +90,6 @@ function App() {
             <thead>
               <tr>
                 <th style={{ textAlign: "left", borderBottom: "1px solid #ccc" }}>
-                  Id
-                </th>
-                <th style={{ textAlign: "left", borderBottom: "1px solid #ccc" }}>
-                  Physician
-                </th>
-                <th style={{ textAlign: "left", borderBottom: "1px solid #ccc" }}>
                   Timestamp
                 </th>
                 <th style={{ textAlign: "left", borderBottom: "1px solid #ccc" }}>
@@ -112,7 +106,7 @@ function App() {
             <tbody>
               {messages.length === 0 ? (
                 <tr>
-                  <td colSpan={6} style={{ padding: "0.75rem 0" }}>
+                  <td colSpan={4} style={{ padding: "0.75rem 0" }}>
                     No messages yet. Search by physician id.
                   </td>
                 </tr>
@@ -122,6 +116,7 @@ function App() {
                     key={m.id}
                     message={m}
                     onClassify={handleClassify}
+                    // MessageRow already receives m.timestamp, m.topic, m.sentiment
                   />
                 ))
               )}

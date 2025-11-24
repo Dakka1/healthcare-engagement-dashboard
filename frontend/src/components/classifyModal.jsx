@@ -34,7 +34,6 @@ function ClassifyModal({ open, onClose, classification, loading }) {
             marginBottom: "0.75rem"
           }}
         >
-          <h2 style={{ margin: 0 }}>Compliance result</h2>
           <button
             type="button"
             onClick={onClose}
@@ -53,12 +52,6 @@ function ClassifyModal({ open, onClose, classification, loading }) {
 
         {!loading && classification && (
           <>
-            <p>
-              <strong>Message id:</strong> {classification.message_id}
-            </p>
-            <p style={{ marginBottom: "0.75rem" }}>
-              {classification.message_text}
-            </p>
 
             <h3 style={{ marginTop: 0 }}>Triggered rules</h3>
             {classification.triggered_rules &&

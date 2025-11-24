@@ -1,15 +1,15 @@
 from fastapi import FastAPI, Request
 from sqlalchemy.orm import Session
-from backend.database import Base, engine, SessionLocal
-from backend.models.physician import Physician
-from backend.models.message import Message
 import pandas as pd
 import time
 import os
+from fastapi.middleware.cors import CORSMiddleware
+from backend.database import Base, engine, SessionLocal
+from backend.models.physician import Physician
+from backend.models.message import Message
 from backend.api.physicians import router as physicians_router
 from backend.api.messages import router as messages_router
 from backend.api.classify import router as classify_router
-from fastapi.middleware.cors import CORSMiddleware
 
 
 

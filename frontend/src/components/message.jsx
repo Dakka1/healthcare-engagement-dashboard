@@ -5,8 +5,6 @@ function MessageRow({ message, onClassify }) {
 
   return (
     <tr>
-      <td style={{ padding: "0.5rem 0" }}>{message.id}</td>
-      <td style={{ padding: "0.5rem 0" }}>{message.physician_id}</td>
       <td style={{ padding: "0.5rem 0" }}>{timestamp}</td>
       <td style={{ padding: "0.5rem 0" }}>{message.topic}</td>
       <td style={{ padding: "0.5rem 0" }}>{message.sentiment}</td>
