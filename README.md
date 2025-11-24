@@ -95,7 +95,7 @@ GET /physicians?state=NY&specialty=Oncology
 
 ## GET /messages
 
-Returns filtered messages.
+Returns filtered messages with optional filters.
 
 ### Query parameters
 • physician_id  
