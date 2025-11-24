@@ -127,8 +127,8 @@ A list of triggered compliance rules.
 
 The backend is built with FastAPI. At startup it loads physicians and messages from CSV files into an SQLite database. It exposes three core endpoints:
 
-• Filter physicians  
-• Filter messages by physician and date range  
+• Get physicians with optional state and/or specialty filters
+• Get messages with optional physician_id and/or date range
 • Classify a message against compliance rules  
 
 Each request is logged with latency timing.
