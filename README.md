@@ -6,6 +6,33 @@ This project is a lightweight full stack application that loads physician and me
 
 # Setup instructions
 
+```
+# Prerequisites
+
+Before running the project, ensure the following are installed on your system:
+
+• **Docker Desktop**
+  Required to build and run the backend container.
+
+• **Node.js and npm**
+  Required to run the React frontend using `npm run frontend`.
+
+### Windows users  
+This project works on Windows without issues. You can run everything using either of these methods:  
+• Install and run Docker Desktop  
+• Install Node.js and npm (both fully supported on Windows)  
+• Use Git Bash to run run.sh
+
+If you prefer not to use run.sh, you can run the Docker commands manually on Windows, Linux, and Mac:
+
+```
+docker build -t healthcare-backend .
+docker stop healthcare-backend || true
+docker rm healthcare-backend || true
+docker run -d --name healthcare-backend -p 8000:8000 healthcare-backend
+```
+```
+
 ## Run using Docker
 
 The backend runs entirely inside Docker. (we can run locally too but cleaner in docker)
