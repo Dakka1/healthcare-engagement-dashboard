@@ -33,7 +33,7 @@ docker run -d --name healthcare-backend -p 8000:8000 healthcare-backend
 ```
 ```
 
-## Run using Docker
+# Run using Docker
 
 The backend runs entirely inside Docker. (we can run locally too but cleaner in docker)
 
@@ -72,6 +72,30 @@ This command automatically:
 The app will be available at:
 ```
 http://localhost:3000
+```
+
+---
+
+# Running Unit Tests
+
+Unit tests are located inside backend/tests.
+
+### Run tests locally
+
+1. Create and activate a Python virtual environment:
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+2. Install backend dependencies:
+```
+pip install -r backend/requirements.txt
+```
+
+3. Run all tests from root directory:
+```
+pytest -q backend/tests
 ```
 
 ---
