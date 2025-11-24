@@ -1,6 +1,6 @@
 # Healthcare Engagement Dashboard
 
-This project is a lightweight full stack application that loads physician and message data, exposes clean FastAPI backend endpoints, and provides a minimal React interface for filtering messages and running compliance classification. It satisfies all requirements of the take home assignment.
+This project is a lightweight full stack application that loads physician and message data, exposes clean FastAPI backend endpoints, and provides a minimal React interface for filtering messages and running compliance classification.
 
 ---
 
