@@ -8,8 +8,6 @@ import os
 router = APIRouter()
 
 # # Load compliance rules ONCE
-# COMPLIANCE_PATH = "backend/data/compliance_policies.json"
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COMPLIANCE_PATH = os.path.join(BASE_DIR, "data", "compliance_policies.json")
 
